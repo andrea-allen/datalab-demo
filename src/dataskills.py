@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def magic_math_op_method(base, power):
     value = base ** power
     # Uncover for demo:
-    value = np.log10(value)
+    # value = np.log10(value)
     return value
 
 

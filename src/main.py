@@ -12,7 +12,7 @@ if __name__ == '__main__':
     two_plus_one = 2 + 1
     magic_math_op = [] #Define an empty list for results
     for i in range(6):
-        magic_math_op.append(np.log10(two_plus_one ** i))
+        magic_math_op.append(two_plus_one ** i)
     magic_math_op_as_array = np.array(magic_math_op)
     range_one_to_ten = np.arange(6)
     plt.plot(range_one_to_ten, magic_math_op_as_array, color='red', label=f'Base {two_plus_one}')
