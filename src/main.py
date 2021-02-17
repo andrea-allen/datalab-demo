@@ -1,14 +1,76 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+from src import dataskills
+
 if __name__ == '__main__':
     print('Main method for Data Lab Demo')
+
+    ############ DEMO ONE #########################
+    # Here we have code directly in the main method
     two_plus_one = 2 + 1
-    powers = []
-    for i in range(10):
-        powers.append(two_plus_one ** i)
-    powers_as_array = np.array(powers)
-    range_one_to_ten = np.arange(10)
-    plt.scatter(range_one_to_ten, powers_as_array, color='red')
+    magic_math_op = []
+    for i in range(6):
+        magic_math_op.append(two_plus_one ** i) # Change to log10 for demo
+    magic_math_op_as_array = np.array(magic_math_op)
+    range_one_to_ten = np.arange(6)
+    plt.scatter(range_one_to_ten, magic_math_op_as_array, color='red', label=f'Base {two_plus_one}')
+    plt.plot(range_one_to_ten, magic_math_op_as_array, color='red', label=f'Base {two_plus_one} Prediction')
+
+    two_plus_three = 2 + 3
+    magic_math_op = []
+    for i in range(6):
+        magic_math_op.append(two_plus_three ** i)
+    magic_math_op_as_array = np.array(magic_math_op)
+    range_one_to_ten = np.arange(6)
+    plt.scatter(range_one_to_ten, magic_math_op_as_array, color='blue', label=f'Base {two_plus_three}')
+    plt.plot(range_one_to_ten, magic_math_op_as_array, color='blue', label=f'Base {two_plus_three} Prediction')
+
     plt.title('Powers Plot')
+    plt.legend(loc='upper left')
     plt.show()
+
+    # Here we have code calling some functions pre-defined, in the main file, but not the main method
+    # two_plus_one = 2 + 1
+    # magic_math_op = []
+    # for i in range(6):
+    #     magic_math_op.append(dataskills.magic_math_op_method(two_plus_one, i))
+    # magic_math_op_as_array = np.array(magic_math_op)
+    # range_one_to_ten = np.arange(6)
+    # plt.scatter(range_one_to_ten, magic_math_op_as_array, color='red', label=f'Base {two_plus_one}')
+    # plt.plot(range_one_to_ten, magic_math_op_as_array, color='red', label=f'Base {two_plus_one} Prediction')
+    #
+    # two_plus_three = 2 + 3
+    # magic_math_op = []
+    # for i in range(6):
+    #     magic_math_op.append(dataskills.magic_math_op_method(two_plus_three, i))
+    # magic_math_op_as_array = np.array(magic_math_op)
+    # range_one_to_ten = np.arange(6)
+    # plt.scatter(range_one_to_ten, magic_math_op_as_array, color='blue', label=f'Base {two_plus_three}')
+    # plt.plot(range_one_to_ten, magic_math_op_as_array, color='blue', label=f'Base {two_plus_three} Prediction')
+    #
+    # plt.title('Powers Plot')
+    # plt.legend(loc='upper left')
+    # plt.show()
+
+
+
+
+
+    ######### DEMO TWO ##############
+    dataskills.collaborative_method()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
