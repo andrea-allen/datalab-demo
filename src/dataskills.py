@@ -53,7 +53,7 @@ def plot_cases(url):
 
     # Rates of change, raw diffs between cases
     plt.plot(nyc['cases'].diff()[1:].index, nyc['cases'].diff()[1:], label='NYC New Cases Daily')
-    plt.plot(losangeles['cases'].diff()[1:].index, losangeles['cases'].diff()[1:], label='LA New Cases Daily')
+    plt.plot(losangeles['cases'].diff()[1:].index, losangeles['cases'].diff()[1:], label='Los Angeles New Cases Daily')
     plt.plot(chittenden['cases'].diff()[1:].index, chittenden['cases'].diff()[1:], label='Chittenden New Cases Daily',
              alpha=0.75, color='green')
     plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
