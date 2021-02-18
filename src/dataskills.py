@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def magic_math_op_method(base, power):
     value = base ** power
     # Uncover for demo:
-    # value = np.log10(value)
+    value = np.log10(value)
     return value
 
 
@@ -65,32 +65,32 @@ def plot_cases(url):
 
 
     ###### DEBUG DEMO PARt TWO ##############
-    # ny_with_pop = cases_with_population_data(nyc)
-    # la_with_pop = cases_with_population_data(losangeles)
-    #
-    # plt.plot(ny_with_pop['cases'].diff()[1:].index, ny_with_pop['cases'].diff()[1:] / (ny_with_pop['POP_ESTIMATE_2019'])[1:], label='NY New Cases By Pop')
-    # plt.plot(la_with_pop['cases'].diff()[1:].index, la_with_pop['cases'].diff()[1:]/(la_with_pop['POP_ESTIMATE_2019'])[1:], label='LA New Cases By Pop')
-    #
-    #
-    # plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
-    #             '2020-10-01', '2020-11-01', '2020-12-01', '2021-01-01', '2021-02-01'])
-    # plt.xticks(rotation=20)
-    #
-    # plt.legend(loc='upper left')
-    # plt.show()
+    ny_with_pop = cases_with_population_data(nyc)
+    la_with_pop = cases_with_population_data(losangeles)
+
+    plt.plot(ny_with_pop['cases'].diff()[1:].index, ny_with_pop['cases'].diff()[1:] / (ny_with_pop['POP_ESTIMATE_2019'])[1:], label='NY New Cases By Pop')
+    plt.plot(la_with_pop['cases'].diff()[1:].index, la_with_pop['cases'].diff()[1:]/(la_with_pop['POP_ESTIMATE_2019'])[1:], label='LA New Cases By Pop')
+
+
+    plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
+                '2020-10-01', '2020-11-01', '2020-12-01', '2021-01-01', '2021-02-01'])
+    plt.xticks(rotation=20)
+
+    plt.legend(loc='upper left')
+    plt.show()
 
     ######## DEBUG DEMO part 3##############
-    # nyc_pop = determine_nyc_pop()
-    #
-    # plt.plot(ny_with_pop['cases'].diff()[1:].index, ny_with_pop['cases'].diff()[1:]/nyc_pop, label='NY New Cases By Pop')
-    # plt.plot(la_with_pop['cases'].diff()[1:].index, la_with_pop['cases'].diff()[1:]/(la_with_pop['POP_ESTIMATE_2019'])[1:], label='LA New Cases By Pop')
-    #
-    # plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
-    #             '2020-10-01', '2020-11-01', '2020-12-01', '2021-01-01', '2021-02-01'])
-    # plt.xticks(rotation=20)
-    #
-    # plt.legend(loc='upper left')
-    # plt.show()
+    nyc_pop = determine_nyc_pop()
+
+    plt.plot(ny_with_pop['cases'].diff()[1:].index, ny_with_pop['cases'].diff()[1:]/nyc_pop, label='NY New Cases By Pop')
+    plt.plot(la_with_pop['cases'].diff()[1:].index, la_with_pop['cases'].diff()[1:]/(la_with_pop['POP_ESTIMATE_2019'])[1:], label='LA New Cases By Pop')
+
+    plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
+                '2020-10-01', '2020-11-01', '2020-12-01', '2021-01-01', '2021-02-01'])
+    plt.xticks(rotation=20)
+
+    plt.legend(loc='upper left')
+    plt.show()
 
 
 def cases_with_population_data(covid_data_df):
