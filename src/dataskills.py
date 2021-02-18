@@ -49,10 +49,13 @@ def plot_cases(url):
     df = load_nyt_data(url)
     nyc = df[df['county'].str.contains('New York City', na=False)]
     losangeles = df[df['county'].str.contains('Los Angeles', na=False)]
+    chittenden = df[df['county'].str.contains('Chittenden', na=False)]
 
     # Rates of change, raw diffs between cases
     plt.plot(nyc['cases'].diff()[1:].index, nyc['cases'].diff()[1:], label='NYC New Cases Daily')
     plt.plot(losangeles['cases'].diff()[1:].index, losangeles['cases'].diff()[1:], label='LA New Cases Daily')
+    plt.plot(chittenden['cases'].diff()[1:].index, chittenden['cases'].diff()[1:], label='Chittenden New Cases Daily',
+             alpha=0.75, color='green')
     plt.xticks(['2020-04-01', '2020-05-01', '2020-06-01', '2020-07-01', '2020-08-01', '2020-09-01',
                 '2020-10-01', '2020-11-01', '2020-12-01', '2021-01-01', '2021-02-01'])
     plt.xticks(rotation=20)
