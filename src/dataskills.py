@@ -94,7 +94,7 @@ def plot_cases(url):
 
 
 def cases_with_population_data(covid_data_df):
-    pop_data = pd.read_csv('../../PopulationEstimates.csv', delimiter=',', thousands=',')
+    pop_data = pd.read_csv('../../PopulationEst.csv', delimiter=',', thousands=',')
                                                                                                                                                             #, encoding="ISO-8859-1") #Remove encoding for demo
     combodf = covid_data_df.join(pop_data.set_index('FIPStxt'), on='fips')
     print(combodf.head(5))
