@@ -13,28 +13,6 @@ def magic_math_op_method(base, power):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ######### FOR DEMO TWO AND THREE ##############
 def covid_data_demo():
     nyt_url_counties = 'https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv'
@@ -94,7 +72,7 @@ def plot_cases(url):
 
 
 def cases_with_population_data(covid_data_df):
-    pop_data = pd.read_csv('../../PopulationEst.csv', delimiter=',', thousands=',')
+    pop_data = pd.read_csv('./PopulationEstimates.csv', delimiter=',', thousands=',', encoding="ISO-8859-1")
                                                                                                                                                             #, encoding="ISO-8859-1") #Remove encoding for demo
     combodf = covid_data_df.join(pop_data.set_index('FIPStxt'), on='fips')
     print(combodf.head(5))
@@ -103,7 +81,7 @@ def cases_with_population_data(covid_data_df):
 
 
 def determine_nyc_pop():
-    pop_data = pd.read_csv('../../PopulationEstimates.csv', delimiter=',', thousands=',', encoding="ISO-8859-1")
+    pop_data = pd.read_csv('./PopulationEstimates.csv', delimiter=',', thousands=',', encoding="ISO-8859-1")
     nyc_fips = [36005, 36047, 36061, 36081, 36085]
     total_pop = 0
     for code in nyc_fips:
